@@ -1,0 +1,23 @@
+.row {
+    width:100%;
+    display:flex;
+    flex-wrap: wrap;
+}
+
+@media only screen and (max-width: 767px) {/* For mobile phones: */.col-s-1 {width: 8.33%;}.col-s-2 {width: 16.66%;}}@media only screen and (min-width: 768px) {/* For laptops and desktops: */.col-l-1 {width: 8.33%;}.col-l-2 {width: 16.66%;}}
+
+.col {width:8.33%}
+.col2{width:16.6%}
+
+#one{
+    order: 1;
+    color: blue;
+}
+#two {
+    order: 2;
+    color: red;
+}
+#three {
+    order: 3;
+    color: green;
+}

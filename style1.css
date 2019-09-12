@@ -1,0 +1,18 @@
+body {font-family: "Times New Roman", Georgia, Serif; color:black; background-color:rgb(91, 174, 202);}
+h1 {color:black;font-size:35px;font-family:impact;border:2px solid Blue;}
+h2 {color:black;font-size:20px;font-family:impact;margin-top:30px;}
+.first {color:gray;}
+ul {font-style: Arial Black;}
+
+.row [width:100%; display:flex;}
+.col {width:8.33%;}
+
+
+/*div allows you to group tags together, it is a block so has its own line*/
+
+
+.imagewater {
+    position: absolute;
+    left: 100px;
+    top:150px ;
+}
