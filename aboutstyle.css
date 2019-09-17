@@ -1,0 +1,51 @@
+
+
+body {
+
+  font-size: 10pt;
+
+  font-family: tahoma;
+
+  color:cadetblue;
+
+  line-height: 14pt;
+
+  padding-left: 5pt;
+
+  padding-right: 5pt;
+
+  padding-top: 40pt;
+
+  text-align center;
+
+text-align: justify;
+
+letter-spacing: 3px;
+
+}
+
+h1
+{
+    text-align: center;
+    text-decoration:none;
+    font-size: 300%;
+    font-weight: bold;
+}
+
+.subheader
+ {
+    text-align: center;
+    text-decoration:none;
+    font-size: 300%;
+    font-weight: bold;
+}
+
+
+p
+{
+    text-align: center;
+    text-decoration:none;
+    font-size: 150%;
+    font-weight: bold;
+}
+
