@@ -9,6 +9,15 @@ body
     font-family: tahoma;
 }
 
+h1
+{
+    text-align: center;
+    text-decoration:none;
+    font-size: 300%;
+    font-weight: bold;
+    font-family: tahoma;
+    color:cadetblue;
+}
 
 .container {
   @include clearfix;

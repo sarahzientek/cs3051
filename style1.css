@@ -96,6 +96,7 @@ h1{
 .btn
 {
     color:white;
+    background-color:dimgray;
     text-decoration:none;
     font-size: 100%;
     font-weight: bold;
