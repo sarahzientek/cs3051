@@ -6,24 +6,20 @@
     padding: 0;
 }
 
-.row
-{
- max-width:1140px;
- margin:0 auto;
+.row {
+    max-width:1140px;
+    margin:0 auto;
 }
-
-
 
 body
 {
     font-family: tahoma;
 }
 
-
-
 .main
 {
-    position: absolute;
+
+  position: absolute;
     width: 1140px;
     top: 50%;
     left: 50%;
@@ -33,10 +29,9 @@ body
 
 
 
-
-head
+header
 {
-  background-image: url("https://image.cnbcfm.com/api/v1/image/105992231-1561667465295gettyimages-521697453.jpeg?v=1561667497&w=630&h=354");
+  background-image: url("https://cdn-image.travelandleisure.com/sites/default/files/styles/1600x1000/public/maldives0615-underwater.jpg?itok=_3KmopLU");
    background-repeat: no-repeat;
    height:100vh;
    background-position: center;
@@ -44,10 +39,9 @@ head
 }
 
 
-
-
 h1{
    color:white;
+
 }
 
 .headerbar
@@ -83,6 +77,8 @@ h1{
 
 .restoname
 {
+    padding: 0;
+    margin: 0;
     float:left;
     margin-top:60px;
     margin-left:30px;
@@ -90,7 +86,6 @@ h1{
     color:white;
     font-size: 90%;
     font-weight: bold;
-
 }
 
 .btn
