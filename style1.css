@@ -1,0 +1,99 @@
+/*python3 -m http.server 3000*/
+
+*
+{
+    margin:0;
+    padding: 0;
+}
+
+.row {
+    max-width:1140px;
+    margin:0 auto;
+}
+
+body
+{
+    font-family: tahoma;
+}
+
+.main
+{
+
+  position: absolute;
+    width: 1140px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 200%;
+}
+
+
+
+header
+{
+  background-image: url("https://cdn-image.travelandleisure.com/sites/default/files/styles/1600x1000/public/maldives0615-underwater.jpg?itok=_3KmopLU");
+   background-repeat: no-repeat;
+   height:100vh;
+   background-position: center;
+   Background-size: cover;
+}
+
+
+h1{
+   color:white;
+
+}
+
+.headerbar
+{
+    list-style: none;
+    float:right;
+    margin-top:60px;
+}
+
+.headerbar li
+{
+    display: inline-block;
+    margin-left: 20px;
+}
+
+.headerbar li a
+{
+    color:white;
+    text-decoration:none;
+    font-size: 90%;
+    font-weight: bold;
+}
+
+.headerbar li a:hover
+{
+    color:#ADD8E6;
+    border-bottom:2px solid #ADD8E6;
+    transition:all 0.1s ease-in;
+    padding:20px, 0;
+}
+
+
+
+.restoname
+{
+    padding: 0;
+    margin: 0;
+    float:left;
+    margin-top:60px;
+    margin-left:30px;
+    text-decoration:none;
+    color:white;
+    font-size: 90%;
+    font-weight: bold;
+}
+
+.btn
+{
+    color:white;
+    background-color:dimgray;
+    text-decoration:none;
+    font-size: 100%;
+    font-weight: bold;
+    transition:all 0.1s ease-in;
+}
