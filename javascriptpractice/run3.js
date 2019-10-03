@@ -1,14 +1,13 @@
-let myobj = {
-    name: 'myname',
-    age:15,
-    printHello: function() {
-        console.log('Hello')
-    }
-}
-myobj.printBye = funciton() {
-    console.log('Bye')
-}
+var fib = function (num)
+{
+  if (num<2)
+  {
+    return num;
+  }
+  else
+  {
+   return fib(n-1) + fib(n-2)
+  }
+};
 
-
-myobj.printHello()
-myobj.printBye()
+ console.log(fib(5));
