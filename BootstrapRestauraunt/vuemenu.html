@@ -1,22 +1,108 @@
-<DOCTYPE html>
 <html>
-<head>
-  <title>Vue Demo #1: The Box App</title>
-  <meta charset='utf-8' />
-  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-</head>
+  <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
 <body>
-  <h1>MENU</h1>
-  <div id="vapp">
-    <p>Hello World.</p>
-  </div>
+<div id="app">
+<h2>MENU</h2>
+</div>
 
-<!-- Our View App goes at the end of the document -->
+<li v-for="product in products">
+  <input type="number" v-model.number="product.quantity"/>
+{{ product.name }}
+
+    <div class="col-lg-3 col-md-4 col-6">
+      <a href="#" class="d-block mb-4 h-100">
+            <img class="img-fluid img-thumbnail" src= "https://us.123rf.com/450wm/mitdesign/mitdesign1805/mitdesign180500037/102881442-stock-vector-sparkling-water-package-design-with-bubbles-in-3d-illustration-naturaleza-is-spaninsh-word-means-nat.jpg?ver=6" alt="Water3" data-toggle="modal" data-target="#exampleModal">
+          {{ product.name }}
+          </a>
+
+    </div>
+
+    <div class="col-lg-3 col-md-4 col-6">
+      <a href="#" class="d-block mb-4 h-100">
+            <img class="img-fluid img-thumbnail" src= "https://us.123rf.com/450wm/mitdesign/mitdesign1805/mitdesign180500037/102881442-stock-vector-sparkling-water-package-design-with-bubbles-in-3d-illustration-naturaleza-is-spaninsh-word-means-nat.jpg?ver=6" alt="Water3" data-toggle="modal" data-target="#exampleModal">
+          {{ product.name }}
+          </a>
+
+    </div>
+
+
+    <div class="col-lg-3 col-md-4 col-6">
+      <a href="#" class="d-block mb-4 h-100">
+            <img class="img-fluid img-thumbnail" src= "https://images-na.ssl-images-amazon.com/images/I/61SuMuiFgtL._SL1001_.jpg" alt="LemonSlice" data-toggle="modal" data-target="#exampleModal">
+         {{ product.name }}
+          </a>
+
+    </div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" v-bind:id="'modal-' + product.id" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+ <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5>Main Course</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Room Temperature Water
+          <br> 300 Euro per carafe (320 ml)
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" d="exampleModal1" v-bind:id="'modal-' + product.id" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+ <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+         <h5>SIDE</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Lemon Slice
+       <br> 12 Euro per slice
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+ <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/vue"></script>
+
 <script>
-const vueApp = new Vue({
-  el: '#vapp',
-  data: {
-   display: 'redbox'
+const app = new Vue({
+el: '#app',
+data: {
+products: []
+},
+ computed: {
+   totalInventory: function() {
+     return this.products.reduce((sum,prod) => {
+       return sum += prod.quantity
+     },0)
+   }
+ },
+ created: function() {
+  fetch('https://api.myjson.com/bins/a3wyt')
+    .then(response => response.json())
+    .then(json => {
+      this.products = json.products
+    })
   }
 })
 </script>

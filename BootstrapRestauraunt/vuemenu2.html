@@ -1,0 +1,62 @@
+<script src="https://unpkg.com/vue"></script>
+<div id="blog-posts-list">
+  <div>
+      <h1> MENU </h1>
+     <h2>{{ likeCount }} personnes aiments ça !</h2>
+    <blog-post
+      v-for="post in posts"
+      v-bind:key="post.id"
+      v-bind:post="post"
+        v-on:add-like="likeCount++"
+    ></blog-post>
+  </div>
+</div>
+
+<style>
+    button {
+        display: inline-block;
+        padding: 5px 7px;
+        margin: 5px 0;
+        border :0;
+        border-radius: 3px;
+        background-color: grey;
+        color: white;
+        text-align:center ;
+    }
+
+    #blog-posts-events-demo {
+        margin:15px;
+    }
+
+    h1 {
+        text-align:center;
+        margin:0px;
+    }
+</style>
+
+
+
+Vue.component('blog-post', {
+  props: ['post'],
+  template: `
+    <div class="blog-post">
+      <h3>{{ post.title }}</h3>
+      <div v-html="post.content"></div>
+        <button v-on:click="$emit('add-like')">
+        J'aime !
+      </button>
+    </div>
+  `
+});
+
+new Vue({
+  el: '#blog-posts-list',
+  data: {
+     likeCount: 2,
+    posts: [
+      { id: 1, title: 'Vue est simple !', content: "Découvrez les bases de <strong>vue.js</strong> !" },
+      { id: 2, title: 'Vue est modulable !', content: "Découvrez les bases de <strong>vue.js</strong> !"},
+      { id: 3, title: 'Vue est plus léger que React et Angular !', content: "Découvrez les bases de <strong>vue.js</strong> !"}
+    ]
+  }
+});
