@@ -3,12 +3,15 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     </head>
 
+
+
+
 <body>
 <div id="app">
 <h2> MENU </h2>
   <ul>
 <li v-for="product in products">
-{{ product.name }}
+{{ product.name}}
 
 <div class="col-lg-3 col-md-4 col-6">
       <a href="#" class="d-block mb-4 h-100">
@@ -23,7 +26,7 @@
 
     <div class="col-lg-3 col-md-4 col-6">
       <a href="#" class="d-block mb-4 h-100">
-      <img class="img-fluid img-thumbnail" src= "https://us.123rf.com/450wm/mitdesign/mitdesign1805/mitdesign180500037/102881442-stock-vector-sparkling-water-package-design-with-bubbles-in-3d-illustration-naturaleza-is-spaninsh-word-means-nat.jpg?ver=6" alt="Water3" data-toggle="modal" data-target="#exampleModal0" v-bind:data-target="'#modal-' + product.id" v-bind:data-target="'#modal-' + product.id">
+      <img class="img-fluid img-thumbnail" src= "https://us.123rf.com/450wm/mitdesign/mitdesign1805/mitdesign180500037/102881442-stock-vector-sparkling-water-package-design-with-bubbles-in-3d-illustration-naturaleza-is-spaninsh-word-means-nat.jpg?ver=6" alt="Water3" data-toggle="modal" data-target="#exampleModal" v-bind:data-target="'#modal-' + product.id" v-bind:data-target="'#modal-' + product.id">
         </img>
           </a>
 
@@ -32,8 +35,8 @@
 
     <div class="col-lg-3 col-md-4 col-6">
       <a href="#" class="d-block mb-4 h-100">
-            <img class="img-fluid img-thumbnail" src= "https://images-na.ssl-images-amazon.com/images/I/61SuMuiFgtL._SL1001_.jpg" alt="LemonSlice" data-toggle="modal" data-target="#exampleModal1">
-         {{ product.name }}
+            <img class="img-fluid img-thumbnail" src= "https://images-na.ssl-images-amazon.com/images/I/61SuMuiFgtL._SL1001_.jpg" alt="LemonSlice" data-toggle="modal" data-target="#exampleModal" v-bind:data-target="'#modal-' + product.id" v-bind:data-target="'#modal-' + product.id">
+         {{ product.info }}
           </a>
 
     </div>
@@ -49,7 +52,7 @@
         </button>
       </div>
       <div class="modal-body">
-         300 Euro per carafe (320 ml)
+         {{product.info}}
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -58,43 +61,6 @@
   </div>
 </div>
 
-<div class="modal fade" id="exampleModal0" v-bind:id="'modal-' + product.id" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
- <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">{{product.name}}</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-       300 Euro per carafe (320 ml)
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="modal fade" id="exampleModal1" v-bind:id="'modal-' + product.id" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
- <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">{{product.name}}</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        12 Euro per slice
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div>
 
 
 
@@ -112,7 +78,7 @@ data: {
 products: []
 },
  created: function() {
-  fetch('https://api.myjson.com/bins/uvzrf')
+  fetch('https://api.myjson.com/bins/1fmjj7')
     .then(response => response.json())
     .then(json => {
       this.products = json.products
