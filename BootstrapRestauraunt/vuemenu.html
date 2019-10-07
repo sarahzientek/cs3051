@@ -24,7 +24,7 @@
 
 <div class="col-lg-3 col-md-4 col-6">
       <a href="#" class="d-block mb-4 h-100">
-            <img class="img-fluid img-thumbnail" src= "https://us.123rf.com/450wm/mitdesign/mitdesign1805/mitdesign180500037/102881442-stock-vector-sparkling-water-package-design-with-bubbles-in-3d-illustration-naturaleza-is-spaninsh-word-means-nat.jpg?ver=6" alt="Water3" data-toggle="modal" v-bind:data-target="'#modal-' + product.id" v-bind:data-target="'#modal-' + product.id">
+            <img class="img-fluid img-thumbnail" src= "https://us.123rf.com/450wm/mitdesign/mitdesign1805/mitdesign180500037/102881442-stock-vector-sparkling-water-package-design-with-bubbles-in-3d-illustration-naturaleza-is-spaninsh-word-means-nat.jpg?ver=6" alt="Water3" data-toggle="modal" data-target="#exampleModal" v-bind:data-target="'#modal-' + product.id" v-bind:data-target="'#modal-' + product.id">
         {{ product.name }}
         </img>
 
@@ -32,13 +32,9 @@
 
     </div>
 
-
-
-
-
     <div class="col-lg-3 col-md-4 col-6">
       <a href="#" class="d-block mb-4 h-100">
-      <img class="img-fluid img-thumbnail" src= "https://us.123rf.com/450wm/mitdesign/mitdesign1805/mitdesign180500037/102881442-stock-vector-sparkling-water-package-design-with-bubbles-in-3d-illustration-naturaleza-is-spaninsh-word-means-nat.jpg?ver=6" alt="Water3" data-toggle="modal" v-bind:data-target="'#modal-' + product.id" v-bind:data-target="'#modal-' + product.id">
+      <img class="img-fluid img-thumbnail" src= "https://us.123rf.com/450wm/mitdesign/mitdesign1805/mitdesign180500037/102881442-stock-vector-sparkling-water-package-design-with-bubbles-in-3d-illustration-naturaleza-is-spaninsh-word-means-nat.jpg?ver=6" alt="Water3" data-toggle="modal" data-target="#exampleModal0" v-bind:data-target="'#modal-' + product.id" v-bind:data-target="'#modal-' + product.id">
         {{ product.name }}
         </img>
           </a>
@@ -48,7 +44,7 @@
 
     <div class="col-lg-3 col-md-4 col-6">
       <a href="#" class="d-block mb-4 h-100">
-            <img class="img-fluid img-thumbnail" src= "https://images-na.ssl-images-amazon.com/images/I/61SuMuiFgtL._SL1001_.jpg" alt="LemonSlice" data-toggle="modal" data-target="#exampleModal">
+            <img class="img-fluid img-thumbnail" src= "https://images-na.ssl-images-amazon.com/images/I/61SuMuiFgtL._SL1001_.jpg" alt="LemonSlice" data-toggle="modal" data-target="#exampleModal1">
          {{ product.name }}
           </a>
 
@@ -65,8 +61,7 @@
         </button>
       </div>
       <div class="modal-body">
-        Room Temperature Water
-          <br> 300 Euro per carafe (320 ml)
+         300 Euro per carafe (320 ml)
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -75,7 +70,7 @@
   </div>
 </div>
 
-<div class="modal fade" d="exampleModal1" v-bind:id="'modal-' + product.id" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="exampleModal0" v-bind:id="'modal-' + product.id" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
  <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -85,8 +80,26 @@
         </button>
       </div>
       <div class="modal-body">
-        Lemon Slice
-       <br> 12 Euro per slice
+       300 Euro per carafe (320 ml)
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="exampleModal1" v-bind:id="'modal-' + product.id" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+ <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">{{product.name}}</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        12 Euro per slice
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -110,13 +123,6 @@ el: '#app',
 data: {
 products: []
 },
- computed: {
-   totalInventory: function() {
-     return this.products.reduce((sum,prod) => {
-       return sum += prod.quantity
-     },0)
-   }
- },
  created: function() {
   fetch('https://api.myjson.com/bins/uvzrf')
     .then(response => response.json())
