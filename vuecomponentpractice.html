@@ -1,0 +1,32 @@
+
+<script src="https://unpkg.com/vue"></script> <script>
+
+const app = new Vue({
+  el: '#app',
+  data: {
+    menu: []
+  },
+  created: function() {
+    fetch('https://api.myjson.com/bins/tlpv7')
+      .then(response => response.json())
+      .then(json => {
+        this.menu = json.items
+      })
+  }
+})
+</script>
+
+
+Vue.component('modal-card', {
+    props: ['product'],
+    template: '#my-modal-card'
+})
+
+
+<script type= >
+</script>
+
+
+<div class="col" v-for="product in products">
+    <modal-card v-bind:product= "product"/>
+</div>

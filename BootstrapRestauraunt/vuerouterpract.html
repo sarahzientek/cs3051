@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<script>
+src = "http://unpkg.com/vue-router/dist/vue-router.js" >
+</script>
+
+<div id = "app" >
+
+ <ul class="nav nav-tabs">
+  <li class="nav-item">
+    <a class="nav-link" href="restomain.html">HOME</a>
+  </li>
+   <li class="nav-item">
+    <a class="nav-link" href="menu2.html">MENU</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="reservations.html">RESERVATIONS</a>
+  </li>
+</ul>
+
+
+
+<p>
+<router-link to="/restomain">
+HOME
+</router-link>
+<router-link to="/vuemenu2">
+MENU
+</router-link>
+<router-link to="/reservations">
+RESERVATIONS
+</router-link>
+</p>
+<router-view>
+</router-view>
+</div>
+
+
+
+
+<script>
+const Home = {template:'<div>Home</div>'}
+const Menu = {template:'<div>Menu</div>'}
+const Reservations = {template:'<div>Reservations</div>'}
+
+
+const routes = [
+{path: '/restomain', component: Home},
+{path: '/vuemenu2', component: Menu},
+{path: '/reservations', component: Reservations},
+]
+
+constHome= {
+    template:'#my-home',
+    data: function(){
+        return {products:[]
+        }
+    }
+}
+constMenu= {
+    template:'#my-menu',
+    data: function(){
+        return {products:[]
+        }
+    }
+}
+constReservations= {
+    template:'#my-reservations',
+    data: function(){
+        return {products:[]
+        }
+    }
+}
+
+
+
+const router = newVueRouter({
+    routes // short for`routes: routes`
+})
+
+const app = new Vue({
+el:'#app',
+router
+})
+</script>
+
+  <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>

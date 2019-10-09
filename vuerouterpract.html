@@ -1,0 +1,86 @@
+<script>
+src = "http://unpkg.com/vue-router/dist/vue-router.js" >
+</script>
+
+<div id = "app" >
+<p>
+<router-link to="/home">
+HOME
+</router-link>
+<router-link to="/menu">
+MENU
+</router-link>
+<router-link to="/AboutUs">
+ABOUT US
+</router-link>
+<router-link to="/WheretoFindUs">
+WHERE TO FIND US
+</router-link>
+<router-link to="/Reservations">
+RESERVATIONS
+</router-link>
+</p>
+<router-view>
+</router-view>
+</div>
+
+
+
+
+  <ul class="nav nav-tabs">
+  <li class="nav-item">
+    <a class="nav-link" href="restomain.html">HOME</a>
+  </li>
+   <li class="nav-item">
+    <a class="nav-link" href="menu2.html">MENU</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="aboutus.html">ABOUT US</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="reservations.html">RESERVATIONS</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="Wheretofindus.html">LOCATIONS</a>
+  </li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+const Home = {template:'<div>Home</div>'}
+const Menu = {template:'<div>Menu</div>'}
+const Reservations = {template:'<div>Reservations</div>'}
+const WheretoFindUs = {template:'<div>WheretoFindUs</div>'}
+const AboutUs = {template:'<div>AboutUs</div>'}
+
+const routes = [
+{path: '/Home', component: Home},
+{path: '/Menu', component: Menu},
+{path: '/Reservations', component: Reservations},
+{path: '/WheretoFindUs', component: WheretoFindUs}
+{path: '/AboutUs', component: AboutUs}
+]
+const router = newVueRouter({
+    routes // short for`routes: routes`
+})
+const app = new Vue({
+el:'#app',
+router
+})
+</script>
