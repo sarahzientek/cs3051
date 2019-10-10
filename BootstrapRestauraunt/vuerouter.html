@@ -1,73 +1,50 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
-    <title>Water Resto!</title>
-  </head>
-  <body>
-
-
+ <head>
+   <!-- Required meta tags -->
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   <!-- Bootstrap CSS -->
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+   <title>Hello, world!</title>
+ </head>
+ <body>
 <script src="https://unpkg.com/vue"></script>
 <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
-
-<div id = "app"> <p>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav">
-      <li class="nav-item active">
-        <router-link to="/BootstrapRestauraunt/restomain"> HOME <span class="sr-only">(current)</span> </router-link>
-      </li>
-      <li class="nav-item">
-        <router-link to="/BootstrapRestauraunt/vuemenu2">MENU </router-link>
-      </li>
-      <li class="nav-item">
-        <router-link to="/BootstrapRestauraunt/reservations">RESERVATIONS </router-link>
-      </li>
-    </ul>
-  </div>
+<div id="app"> <nav class="navbar navbar-expand-lg navbar-light bg-light">
+ <a class="navbar-brand" href="#">Water Bar</a>
+ <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+   <span class="navbar-toggler-icon"></span>
+ </button>
+ <div class="collapse navbar-collapse" id="navbarNav">
+<router-link to="/">Home</router-link>
+<router-link to="/menu">Menu</router-link>
+<router-link to="/Contact">Reservations</router-link>
 </nav>
-</p>
-<router-view></router-view>
 </div>
-
-
-  <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-
-<script type="text/x-template" id="my-home">
+ <router-view></router-view>
+</nav>
+   <!-- Optional JavaScript -->
+   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+   <script type="text/x-template" id="my-home">
      <p> My home page </p>
    </script>
-
-<script>
-const Home = {template:'<div>Home</div>'}
-const Menu = {template:'<div>Menu</div>'}
-const Reservations = {template:'<div>Reservations</div>'}
-
-
-const router = newVueRouter({
-    routes: [
-    {path: '/BootstrapRestauraunt/restomain', component: Home},
-    {path: '/BootstrapRestauraunt/vuemenu2', component: Menu},
-    {path: '/BootstrapRestauraunt/reservations', component: Reservations}
-    ]
-})
-
-const app = new Vue({
-el:'#app',
-router
-})
-</script>
-</body>
+     <script>
+     const Home = { template: '#my-home' }
+     const Menu = { template: '<div>Menu</div>' }
+     const routes = [
+       { path: '/', component: Home },
+       { path: '/menu', component: Menu }
+     ]
+     const router = new VueRouter({
+       routes // short for routes: routes
+     })
+   const app = new Vue({
+     el: '#app', router
+   })
+   </script>
+ </body>
 </html>
